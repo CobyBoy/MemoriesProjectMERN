@@ -3,6 +3,7 @@ import { Container, AppBar, Typography, Grow, Grid } from '@material-ui/core';
 import { useDispatch } from 'react-redux';
 // @ts-ignore
 import memories from './images/memories.png';
+import { ToastContainer } from 'react-toastify';
 import Form from './components/Form/Form';
 import Posts from './components/Posts/Posts'; 
 import { getPosts } from './redux/actions/postAction'
@@ -19,6 +20,7 @@ const App = () => {
     }, [currentId, dispatch])
     
     return (
+        <>
         <Container maxWidth="lg">
             <AppBar className={classes.appBar} position="static" color="inherit">
                 <Typography className={classes.heading} variant="h2" align="center">Memories</Typography>
@@ -31,12 +33,14 @@ const App = () => {
                             <Posts setCurrentId={setCurrentId}/>
                         </Grid>
                         <Grid item xs={12} sm={4}>
-                            <Form currentId={ currentId } setCurrentId={setCurrentId}/>
+                            <Form currentId={ currentId } setCurrentId={ setCurrentId } />
                         </Grid>
                     </Grid>
                 </Container>
-            </Grow>
-        </Container>
+                </Grow>
+                <ToastContainer autoClose={ 2000 } pauseOnHover={ false } pauseOnFocusLoss={ false }/>
+            </Container>
+            </>
     )
 }
 
