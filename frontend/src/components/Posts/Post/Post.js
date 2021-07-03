@@ -28,7 +28,7 @@ const Post = ({ post: { creator, title, tags, message, createdAt, selectedFile, 
                 <div className={classes.details}>
                     <Typography variant="body2" color="textSecondary">{ tags.map((tag) => (tag? `#${tag} `: '')) }</Typography>
                 </div>
-                <Typography variant="h5" gutterBottom>{ title }</Typography>
+                <Typography variant="h5" gutterBottom className={classes.title}>{ title }</Typography>
                 <CardContent>
                     <Typography className={ classes.title } variant="body2" color="textSecondary" component="p">{ message }</Typography>
                 </CardContent>
