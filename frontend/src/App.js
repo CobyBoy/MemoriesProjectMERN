@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 import { Container, AppBar, Typography, Grow, Grid } from '@material-ui/core';
 import { useDispatch } from 'react-redux';
 // @ts-ignore
-import memories from './images/memories.png';
+import memories from './assets/memories.png';
 import { ToastContainer } from 'react-toastify';
 import Form from './components/Form/Form';
 import Posts from './components/Posts/Posts'; 
